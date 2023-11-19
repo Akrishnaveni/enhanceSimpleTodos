@@ -1,0 +1,26 @@
+.bg-container {
+  background-color: rgb(187, 96, 43);
+  height: 100vh;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+.card-container {
+  background-color: rgb(231, 231, 230);
+  height: 100%;
+  border-radius: 10px;
+  text-align: center;
+  padding: 30px;
+  padding-bottom: 30px;
+  overflow: auto;
+  width: 70%;
+}
+.title {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 28px;
+  color: rgb(240, 90, 36);
+}
+.list-container {
+  list-style: none;
+}
