@@ -10,14 +10,33 @@ class TodoItem extends Component {
     deleteTodo(id)
   }
 
+  onclickEdit = () => {
+    const {TodoDetails, editTodo} = this.props
+    const {id} = TodoDetails
+
+    editTodo(id)
+  }
+
   render() {
     const {todoDetails} = this.props
-    const {title} = todoDetails
+
+    const {id, title, isModifying} = todoDetails
+    let btnContent
+
+    if (isModifying === true) {
+      btnContent = 'Save'
+    } else {
+      btnContent = 'Edit'
+    }
+
     return (
       <li className="to-do-card-container">
-        <p className="todo-title">{title}</p>
-        <button type="button" className="btn">
-          Edit
+        {isModifying && (
+          <input type="text" value={title} onChange={this.onChangeInput} />
+        )}
+        {!isModifying && <p className="todo-title">{title}</p>}
+        <button type="button" className="btn" onClick={this.onClickEdit}>
+          {btnContent}
         </button>
         <button type="button" className="btn" onClick={this.onDelete}>
           Delete
