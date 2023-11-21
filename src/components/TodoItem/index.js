@@ -10,9 +10,9 @@ class TodoItem extends Component {
     deleteTodo(id)
   }
 
-  onclickEdit = () => {
-    const {TodoDetails, editTodo} = this.props
-    const {id} = TodoDetails
+  onClickEdit = () => {
+    const {todoDetails, editTodo} = this.props
+    const {id} = todoDetails
 
     editTodo(id)
   }
