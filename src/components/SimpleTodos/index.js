@@ -75,7 +75,10 @@ class SimpleTodos extends Component {
     this.setState(prevState => ({
       TodoList: prevState.TodoList.map(eachTodo => {
         if (eachTodo.id === id) {
-          eachTodo.isModifying = !prevState.TodoList.eachTodo.isModifying
+          return {
+            ...eachTodo,
+            isModifying: !eachTodo.isModifying,
+          }
         }
         return eachTodo
       }),
@@ -103,6 +106,7 @@ class SimpleTodos extends Component {
                 key={each.id}
                 deleteTodo={this.deleteTodo}
                 editTodo={this.editTodo}
+                onChange={this.onChangeInput}
               />
             ))}
           </ul>

@@ -10,6 +10,11 @@ class TodoItem extends Component {
     deleteTodo(id)
   }
 
+  onChangeInput = () => {
+    const {onChange} = this.props
+    onChange()
+  }
+
   onClickEdit = () => {
     const {todoDetails, editTodo} = this.props
     const {id} = todoDetails
